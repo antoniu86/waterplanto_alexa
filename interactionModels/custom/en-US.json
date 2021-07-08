@@ -1,0 +1,432 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "water planto",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "CheckPlantsIntent",
+          "slots": [],
+          "samples": [
+            "for my plants",
+            "for information about my plants",
+            "how are my plants",
+            "for my devices",
+            "for information about my devices",
+            "how are my devices"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "WaterPlantIntent",
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{plant}"
+              ]
+            }
+          ],
+          "samples": [
+            "start watering my plant",
+            "start water for plant",
+            "start watering plant",
+            "start device",
+            "to start device",
+            "to start my device",
+            "water my plant",
+            "to water plant",
+            "water plant"
+          ]
+        },
+        {
+          "name": "CheckPlantIntent",
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{plant}"
+              ]
+            }
+          ],
+          "samples": [
+            "to check my device",
+            "check my device",
+            "check my plant",
+            "to check my plant"
+          ]
+        },
+        {
+          "name": "CheckPlantDescriptionIntent",
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{plant}"
+              ]
+            }
+          ],
+          "samples": [
+            "device description",
+            "for device description",
+            "for my device description",
+            "plant description",
+            "for plant description",
+            "for my plant description"
+          ]
+        },
+        {
+          "name": "SetPlantHumidityIntent",
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{plant}"
+              ]
+            },
+            {
+              "name": "value",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{value}"
+              ]
+            }
+          ],
+          "samples": [
+            "to set minimum soil humidity",
+            "to set soil humidity",
+            "set soil humidity limit"
+          ]
+        },
+        {
+          "name": "WaterPlantsIntent",
+          "slots": [],
+          "samples": [
+            "start devices",
+            "to water plants",
+            "to water all plants",
+            "water plants"
+          ]
+        },
+        {
+          "name": "CheckPlantSettingsIntent",
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{plant}"
+              ]
+            }
+          ],
+          "samples": [
+            "for device settings",
+            "device settings"
+          ]
+        },
+        {
+          "name": "SetPlantDurationIntent",
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{plant}"
+              ]
+            },
+            {
+              "name": "value",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{value}"
+              ]
+            }
+          ],
+          "samples": [
+            "to set pomp duration",
+            "to set pomp running time",
+            "set device pomp running time"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SetPlantHumidityIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1008115963862.1379295341644"
+              }
+            },
+            {
+              "name": "value",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1008115963862.729137965650"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1008115963862.729137965650.1453859817530",
+                  "values": [
+                    "45",
+                    "35",
+                    "25",
+                    "15",
+                    "50",
+                    "40",
+                    "30",
+                    "20",
+                    "10"
+                  ]
+                }
+              ]
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "WaterPlantIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1411151810877.1124417925201"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "CheckPlantIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.351862273772.877130142222"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "CheckPlantDescriptionIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1352472192959.69757271382"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "CheckPlantSettingsIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1226800302073.1584576172385"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "SetPlantDurationIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "plant",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1416220072329.756618783491"
+              }
+            },
+            {
+              "name": "value",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1416220072329.488166917921"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1416220072329.488166917921.204915014326",
+                  "values": [
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "4",
+                    "15",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1008115963862.1379295341644",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "for which plant"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1008115963862.729137965650.1453859817530",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "the value must be between zero and fifty and a multiple of five"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1008115963862.729137965650",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "choose a value from zero to fifity and a multiple of five"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1411151810877.1124417925201",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which device"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.351862273772.877130142222",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which device"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1352472192959.69757271382",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which device"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1226800302073.1584576172385",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which device"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1416220072329.756618783491",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which device"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1416220072329.488166917921",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "choose a value from four to fifteen seconds"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1416220072329.488166917921.204915014326",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please choose a value from four to fifteen seconds"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "18"
+}
